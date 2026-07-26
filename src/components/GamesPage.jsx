@@ -1,16 +1,38 @@
 import GameCard from './GameCard';
-import slitherThumb from '../assets/slither.png';
+import geoWager from '../assets/geoWager.png';
+import chessBg from '../assets/chess.png';
+import skaterBg from '../assets/surfer.png';
+import golfBg from '../assets/golf.png';
+import flapBg from '../assets/flap.png';
+import shapeBg from '../assets/shape.png';
+import snakeBg from '../assets/snake.png';
+import crossBg from '../assets/cross.png';
+import {
+  TrendingUp,
+  Swords,
+  Crosshair,
+  Skull,
+  Zap,
+  Flame,
+  Trophy,
+  Shield,
+  Target,
+  Gamepad2,
+  Crown,
+  Rocket,
+  Bomb,
+  Radar,
+} from 'lucide-react';
 
-const featuredGames = [
-  { title: 'slither.io', entryFee: 5, prizePool: 36, players: 6, maxPlayers: 8 },
-  { title: 'Battle Royale', entryFee: 10, prizePool: 108, players: 9, maxPlayers: 12 },
-  { title: 'Death Match', entryFee: 3, prizePool: 16, players: 4, maxPlayers: 6, thumbnail: slitherThumb },
-];
-
-const classicGames = [
-  { title: 'Duel Arena', entryFee: 5, prizePool: 9, players: 1, maxPlayers: 2 },
-  { title: 'Quickdraw', entryFee: 15, prizePool: 27, players: 2, maxPlayers: 2 },
-  { title: 'Chess Clock', entryFee: 8, prizePool: 14, players: 1, maxPlayers: 2 },
+const trendingGames = [
+  { title: 'GeoWager', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: geoWager },
+  { title: 'Chess', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: chessBg },
+  { title: 'Subway Skater', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: skaterBg },
+  { title: 'Golf!', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: golfBg },
+  { title: 'Flappy Pigeon', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: flapBg },
+  { title: 'Shape Dash', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: shapeBg },
+  { title: 'Snake', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: snakeBg },
+  { title: 'Cross the Road', studio: 'Community Mode', icon: Zap, players: 6, thumbnail: crossBg },
 ];
 
 export default function GamesPage() {
@@ -18,21 +40,11 @@ export default function GamesPage() {
     <main className="games-page">
       <section className="game-section">
         <div className="section-header">
-          <h2>Featured Games:</h2>
+          <TrendingUp size={18} color="var(--text-secondary)" />
+          <h2>Featured Games</h2>
         </div>
-        <div className="game-grid">
-          {featuredGames.map((g) => (
-            <GameCard key={g.title} {...g} />
-          ))}
-        </div>
-      </section>
-
-      <section className="game-section">
-        <div className="section-header">
-          <h2>Classics:</h2>
-        </div>
-        <div className="game-grid">
-          {classicGames.map((g) => (
+        <div className="trending-row">
+          {trendingGames.map((g) => (
             <GameCard key={g.title} {...g} />
           ))}
         </div>

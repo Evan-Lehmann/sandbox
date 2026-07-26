@@ -1,28 +1,22 @@
-export default function GameCard({ title, entryFee, prizePool, players, maxPlayers, thumbnail }) {
+export default function GameCard({ title, studio, icon: Icon, thumbnail, players, badge }) {
   return (
     <div className="game-card">
       <div
         className="game-card-thumb"
         style={thumbnail ? { backgroundImage: `url(${thumbnail})` } : undefined}
       >
-      </div>
-      <div className="game-card-body">
-        <h3>{title}</h3>
-        <div className="game-card-stats">
-          <div className="stat">
-            <span className="stat-label">entry</span>
-            <span className="stat-value">${entryFee}</span>
-          </div>
-          <div className="stat">
-            <span className="stat-label">pool</span>
-            <span className="stat-value stat-gold">${prizePool}</span>
-          </div>
-          <div className="stat">
-            <span className="stat-label">players</span>
-            <span className="stat-value">{players}/{maxPlayers}</span>
-          </div>
+        {badge && <div className="game-card-badge">{badge}</div>}
+        {!thumbnail && Icon && (
+          <Icon size={44} strokeWidth={1.5} className="game-card-icon" />
+        )}
+        <div className="game-card-overlay">
+          <h3>{title}</h3>
         </div>
-        <button className="join-button">Play</button>
+      </div>
+      <div className="game-card-stat">
+        <span className="game-card-dot" />
+        <span className="game-card-count">{players}</span>
+        <span className="game-card-playing">playing</span>
       </div>
     </div>
   );
