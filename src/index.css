@@ -1,0 +1,37 @@
+:root {
+  --bg: #0b0a10;
+  --surface: #15131d;
+  --surface-2: #1d1a29;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --purple: #7c5cfc;
+  --purple-dim: #4b3b99;
+  --purple-glow: rgba(124, 92, 252, 0.35);
+  --gold: #f2b84b;
+  --text-primary: #f5f3fa;
+  --text-secondary: #9c97ad;
+  --text-muted: #6b6678;
+  --radius: 14px;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+.app {
+  overflow-x: hidden;
+}
