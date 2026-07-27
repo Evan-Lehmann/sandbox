@@ -32,6 +32,6 @@ button {
   font-family: var(--font-body);
 }
 
-.app {
-  overflow-x: hidden;
+html, body {
+  overscroll-behavior-y: none;
 }
